@@ -1,0 +1,31 @@
+
+<div class="cart-item">
+    <% if(pizza.is_new) { %>
+    <span class="label label-danger">Нова</span>
+    <% } else if(pizza.is_popular) {%>
+    <span class="label label-success">Популярна</span>
+    <% } %>
+    <% if(pizza[size].is_only_one){ %>
+    <span id='name'><%= pizza.title %></span>
+    <%} else if(pizza[size].size==40) {%>
+    <span id='name'><%= pizza.title %> (Велика)</span>
+    <% } else if(pizza[size].size==30) {%>
+    <span id='name'><%= pizza.title %> (Мала)</span>
+    <% } %>
+    
+    <br>
+    <span id='dw'>
+        <h id='d'><img src="assets/images/size-icon.svg"><%= pizza[size].size %></h>
+        <h id='w'><img src = "assets/images/weight.svg"><%= pizza[size].weight %></h>
+    </span>
+    <br>
+    <div class="b">
+        <h id='c_price'><%= pizza[size].price %>грн</h>
+        <button class="btn btn-danger" id='minus'>-</button>
+        <div class="label label-default" id='amount'><%= quantity %></div>
+        <button class="btn btn-success" id='plus'>+</button>
+        <button class="btn btn-default" id='del'>×</button>
+    </div>
+    <img src="<%= pizza[size].icon %>" id='p_img'>
+    <div class='grline'></div>
+</div>
