@@ -1,4 +1,5 @@
 @import "pizza/pizza-card";
+@mainColor: #ff7700;
 
 * {
     font-family: Arial, Helvetica, sans-serif;
@@ -11,7 +12,7 @@ body {
 thumbnail{
     .caption{
         .h3{
-            color:darkorange;
+            color: lighten(@mainColor, 15%);
         }
     } 
 }
@@ -22,6 +23,11 @@ thumbnail{
         margin-top: 100px;
         h2{
             text-align: center;
+            font-weight: bold;
+            .badge {
+                background-color: lighten(@mainColor, 15%);
+            }
+
         }
     }
 }
@@ -33,17 +39,19 @@ thumbnail{
         display: inline-block;
         cursor: pointer;
         padding-bottom: 20px;
+        font-size: 15px;
         a{
-            color: #EA862E;
+            color: @mainColor;
             text-decoration: none;
             padding: 10px;
         }
         :hover {
-            background-color:#F0EDED;
+            background-color: lighten(@mainColor, 15%);
+            color: white;
             border-radius: 3px;
         }
         .active {
-            background-color: #EA862E;
+            background-color: lighten(@mainColor, 15%);
             color: white;
             border-radius: 4px;
         }
@@ -52,7 +60,7 @@ thumbnail{
 
 #cmf{
     margin-left:30%;
-    float:center;
+    //float:center;
 }
 
 .container-fluid{
@@ -62,47 +70,50 @@ thumbnail{
 }
 
 .cart{
-    background-color: azure;
+    background-color: #f2f6f6;
     float:left;
     z-index: 99999;
     width:24%;
     height:100%;
     .cart-inf{
         margin-left:10px;
-        margin-top:40px;
+        margin-top:30px;
+        margin-bottom: 20px;
         font-size:18px;
         font-weight:bold;
         max-height: 30px;
         .inf-amount{
-            padding: 1px;
-            padding-right: 6px;
-            padding-left: 6px;
+            padding: 1px 6px;
             font-size:14px;
-            background-color:orange;
+            background-color:@mainColor;
             color:white;
             border-radius:50%
         }
         .clear{
-            margin-left:15px;
+            margin-left:10%;
             font-size:12px;
-            background-collor:azure;
             color: lightgray;
             font-weight:bold;
         }
     }
     .items{
-        margin-top:40px;
+        background-color: #f5f1f1;
+        margin-top:10px;
     }
     .cart-item{
         //margin-top:20px;
+        padding-top: 5%;
         margin-left: 2%;
         min-height:123px;
         
         #p_img{
             float:right;
-            min-width:120px;
-            margin-right: -70px;
-            margin-top:-115px;
+            //min-width:120px;
+            min-width:160px;
+            //margin-right: -70px;
+            //margin-top:-115px;
+            margin-right: -90px;
+            margin-top:-140px;
         }
         #dw{
             margin-top:-20px;
@@ -116,12 +127,13 @@ thumbnail{
         }
         #name{
             display: table-cell;
-            font-size:16px;
+            font-size:18px;
             font-weight:bold;
-            color:darkorange;
+            color:@mainColor;
         }
         .b{
             font-weight: bold;
+            margin-top: 15px;
             #c_price{
                 margin-right:4px;
             }
@@ -150,7 +162,7 @@ thumbnail{
                 margin-left:2px;
                 width:30px;
                 height:30px;
-                color:darkorange;
+                color:@mainColor;
                 font-weight: bolder;
                 font-size:10pt;
                 border-radius:50%;
@@ -159,7 +171,8 @@ thumbnail{
     }
     .grline {
         border-bottom: 1px solid lightgrey;
-        margin-top: 5px;
+        //margin-top: 5px;
+        margin-top: 20px;
         width:500px;
     }
     img{
@@ -196,18 +209,21 @@ thumbnail{
 
 .navigation {
     opacity:0.95;
-    width:76;
+    width:76%;
     min-height: 85px;
     max-height: 90px;
     button {
         float: right;
         margin-top: -4px;
-        background-color: darkorange;
+        background-color: lighten(@mainColor, 5%);
+    }
+    button:hover {
+        background-color: @mainColor;
     }
 }
 .ad-inform {
     padding-left: 130px;
-    padding-right: 30%;
+    padding-right: 1%;
     padding-top: 17px;
     margin-bottom: 5px;
     max-height:75px;
@@ -215,12 +231,15 @@ thumbnail{
         font-size: 20px;
     }
     color: darkgrey;
-    * {
-        padding-right: 15px;
+    #ph_num {
+        padding-right: 60px;
+    }
+    #hours {
+        padding-right: 60px;
     }
     #f{
         font-size: 18px;
-        
+        padding-right: 60px;
     }
     .grline {
         border-bottom: 1px solid darkgrey;
@@ -252,7 +271,7 @@ thumbnail{
             }
         button {
             margin-top: -8px;
-            margin-right:-88px;
+            margin-right:-500px;
         }
         
         }
@@ -264,11 +283,9 @@ thumbnail{
             width:200%;
             font-size:16px;
             .inf-amount{
-                padding:1px;
-                padding-right:4px;
-                padding-left:4px;
+                padding: 1px 4px;
                 font-size:12px;
-                background-color:orange;
+                background-color:lighten(@mainColor, 15%);
                 color:white;
                 border-radius:50%
             }
@@ -366,7 +383,7 @@ thumbnail{
 
 .top-label, .bottom-label {
     position: fixed;
-    z-index: 99999;
+    z-index: 1111;
     text-align: center;
 }
 
@@ -383,7 +400,7 @@ thumbnail{
 .label-square {
     width: 100px;
     height: 100px;
-    background-color: #EA862E;
+    background-color: lighten(@mainColor, 15%);
     margin: 0 0 -6px 0;
     color: white;
     font-size: 20px;
@@ -402,7 +419,7 @@ thumbnail{
         font-weight: bolder;
         height: 120px;
         hr{
-            border: 1px dashed brown;
+            border: 1px dashed white;
             margin-top: 5px;
             margin-bottom: 7px;
             width: 80%;
@@ -411,13 +428,4 @@ thumbnail{
     img {
         margin-bottom: -6px; 
     }
-}
-
-.footer {
-    padding-top: 50px;
-    padding-right: 350px;
-    padding-bottom: 50px;
-    text-align: center;
-    color: darkgray;
-    width: 100%;
 }
