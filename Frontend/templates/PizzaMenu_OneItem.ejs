@@ -7,27 +7,21 @@ function getIngredientsArray(pizza) {
     //Отримує вміст піци
     var content = pizza.content;
     var result = [];
-
     //Object.keys повертає масив ключів в об’єкті JavaScript
-
     Object.keys(content).forEach(function(key){
-
         //a.concat(b) створює спільний масив із масивів a та b
         result = result.concat(content[key]);
     });
-
     return result;
 }
-
-
-   %>
+%>
 <div class="col-sm-6 col-md-4">
-        <div class="thumbnail pizza-card" id='p'>
-            
+    <div class="thumbnail pizza-card" id='p'>
+
         <img src="<%= pizza.icon %>" id='p_i'>
 
         <div class="caption">
-                <% if(pizza.small_size && pizza.big_size) { %>
+            <% if(pizza.small_size && pizza.big_size) { %>
                 <div class = "diam">
                     <span id='i_l'><img src = "assets/images/size-icon.svg"><%= pizza.small_size.size %></span>
                     <span id='i_r'><img src = "assets/images/size-icon.svg"><%= pizza.big_size.size %></span>
@@ -47,8 +41,8 @@ function getIngredientsArray(pizza) {
                 <p>
                     <a href="#" id='b_l' class="btn btn-warning">Купити</a>
                     <a href="#" id='b_r' class="btn btn-warning">Купити</a>
-                </p>           
-                <% } else if(pizza.small_size) {%>
+                </p>
+            <% } else if(pizza.small_size) {%>
                 <div class = "info-single">
                     <div class = "diam">
                         <span><img src = "assets/images/size-icon.svg" id='i'><%= pizza.small_size.size %></span>
@@ -64,9 +58,9 @@ function getIngredientsArray(pizza) {
                     </div>
                     <p>
                         <a href="#" id='b_r' class="btn btn-warning">Купити</a>
-                    </p>           
+                    </p>
                 </div>
-                <% } else if(pizza.big_size) {%>
+            <% } else if(pizza.big_size) {%>
                 <div class = "info-single">
                     <div class = "diam">
                         <span><img src = "assets/images/size-icon.svg" id='i'><%= pizza.big_size.size %></span>
@@ -82,14 +76,9 @@ function getIngredientsArray(pizza) {
                     </div>
                     <p>
                         <a href="#" id='b_r' class="btn btn-warning">Купити</a>
-                    </p>           
+                    </p>
                 </div>
-                <%} %>
-            </div>
-        </div>  
+            <%} %>
+        </div>
     </div>
 </div>
- 
-                
-
-                

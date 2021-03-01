@@ -1,0 +1,55 @@
+<% include ('./common/header.ejs') %>
+
+<div class="container-fluid" id='cfm'>
+    <div class="main">
+        <div class="filters">
+            <div class="title">
+                <h2>
+                <span id="type-title">Усі піци</span>
+                <span class="badge">8</span>
+                </h2>
+            </div>
+            <div class="pizza-type">
+                <ul>
+                    <li><a id="all" class="active" href="#">Усі</a></li>
+                    <li><a id="meat" href="#">М'ясні</a></li>
+                    <li><a id="pineapple" href="#">З ананасом</a></li>
+                    <li><a id="mushroom" href="#">З грибами</a></li>
+                    <li><a id="ocean" href="#">З морепродуктами</a></li>
+                    <li><a id="tomato" href="#">Вега</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row" id="pizza_list">
+
+        </div>
+
+
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row" id="pizza_list">
+    </div>
+</div>
+<div class="cart">
+        <div class="cart-inf">
+            <span class="inf-text">Замовлення</span>
+            <span class="inf-amount">0</span>
+            <a class='clear'>Очистити замовлення</a>
+        </div>
+
+        <div class= "items">
+        </div>
+
+        <div class= "cart-pay">
+            <div class="grline"></div>
+            <div class="pay-info">
+                <span id='cart-text'>Сума замовлення</span>
+                <span id='cart-price'><span id='cart-price-num'>0</span> грн</span>
+            </div>
+            <div id='buy_b' class="btn btn-warning">Замовити</div>
+        </div>
+</div>
+
+<% include ('./common/footer.ejs') %>

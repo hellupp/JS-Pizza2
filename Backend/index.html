@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <!-- LESS основний файл -->
-    <link rel="stylesheet/less" type="text/css" href="assets/less/main.less"/>
+    <link rel="stylesheet/less" type="text/css" href="assets/less/main.less" />
     <!-- LESS JavaScript компілятор -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
 
@@ -23,11 +23,8 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top navigation">
     <div class="ad-inform">
-        <div id='ph_num'
-             class="visible-xs-inline-block visible-sm-inline-block visible-lg-inline-block visible-md-inline-block">
-            (044) 222 5 222
-        </div>
-        <div id='hours' class="visible-lg-inline-block visible-md-inline-block">24 години/ 7 днів на тиждень</div>
+        <div id='ph_num' class="visible-xs-inline-block visible-sm-inline-block visible-lg-inline-block visible-md-inline-block">(044) 222 5 222</div>
+        <div id='24'class="visible-lg-inline-block visible-md-inline-block">24 години/ 7 днів на тиждень</div>
         <div id='f' class="visible-lg-inline-block">Безкоштовна доставка піци</div>
         <button class="btn btn-warning">Ввійти</button>
         <div class='grline'></div>
@@ -58,7 +55,11 @@
             </div>
         </div>
 
-        <div class="row" id="pizza_list"></div>
+        <div class="row" id="pizza_list">
+
+        </div>
+
+
     </div>
 </div>
 <div class="container-fluid">
@@ -72,26 +73,32 @@
         <a class='clear'>Очистити замовлення</a>
     </div>
 
-    <div class="items">
+    <div class= "items">
     </div>
 
-    <div class="cart-pay">
+    <div class= "cart-pay">
         <div class="grline"></div>
         <div class="pay-info">
             <span id='cart-text'>Сума замовлення</span>
             <span id='cart-price'><span id='cart-price-num'>0</span> грн</span>
         </div>
-        <div id='buy_b' class="btn btn-warning">Замовити</div>
+        <div id='buy_b' href="#" class="btn btn-warning">Замовити</div>
     </div>
 </div>
 
+<div class="bottom-label">
+    <img src="assets/images/discount.svg">
+    <div class="label-square">
+        ЦЬОГО<br>ТИЖНЯ<br>НА ВСЕ<br><hr>-20%
+    </div>
+</div>
 <!-- jQuery JavaScript -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
 
 <!--Bootsrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <!--Own JavaScript -->
-<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript"  src="assets/js/main.js"></script>
 </body>
 </html>
