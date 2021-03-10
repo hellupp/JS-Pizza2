@@ -154,9 +154,29 @@ var pizza_info = JSON.parse('[{"id":1,"icon":"assets/images/pizza_7.jpg","title"
                     }, function(err, result){
                         if(err) {
                             alert("Can't create order");
-                        }});
-                }
-            });
+                        } else {
+                            console.log(result.signature);
+                            LiqPayCheckout.init({
+                                data: result.data,
+                                signature: result.signature,
+                                embedTo: "#liqpay",
+                                mode: "popup"
+                            }).on("liqpay.callback", function (data) {
+                                //console.log(data.status);
+                                //console.log(data);
+                                if(data.status==="success" || data.status==="sandbox"){
+                                    alert("Оплата успішна");
+                                    //window.location = "/";
+                                }
+                                else{
+                                    alert("Оплата не відбулася")
+                                }
+                            }).on("liqpay.ready", function (data) {
+                            }).on("liqpay.close", function (data) {
+                            });
+                        }
+                    });
+                }});
         });
     },{"./Pizza_List":1,"./pizza/PizzaCart":4,"./pizza/PizzaMenu":5}],4:[function(require,module,exports){
         /**
