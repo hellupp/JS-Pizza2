@@ -17,6 +17,7 @@
 
     <script>
         function initMap() {
+            console.log("init map");
             map = new google.maps.Map(document.getElementById("map"), {
                 center: {
                     lat: 50.464379,
@@ -193,6 +194,9 @@
                         </p>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <div id="map"></div>
             </div>
             <div class="row">
                 <div class="form-group">
