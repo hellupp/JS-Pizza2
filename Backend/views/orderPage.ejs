@@ -11,13 +11,10 @@
     <link rel="stylesheet/less" type="text/css" href="assets/less/main.less" />
     <!-- LESS JavaScript компілятор -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
-
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl5JjMaP9GYQLwTntLtvO3AolGESMWYtw&libraries=places&callback=initMap"></script>
     <script src="//static.liqpay.ua/libjs/checkout.js"></script>
-
     <script>
         function initMap() {
-            console.log("init map");
             map = new google.maps.Map(document.getElementById("map"), {
                 center: {
                     lat: 50.464379,
@@ -39,9 +36,12 @@
                 map: map,
                 icon: "assets/images/home-icon.png"
             });
+
             var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers:true});
             var directionsService = new google.maps.DirectionsService();
+
             directionsDisplay.setMap(map);
+
             google.maps.event.addListener(map, 'click',function(me){
                 var coordinates = me.latLng;
                 geocodeLatLng(coordinates,  function(err, address){
@@ -64,6 +64,8 @@
                     }
                 });
             });
+
+
             $("#inputAddress").keyup(function(){
                 var TIME_OUT = 2000;
                 setTimeout(function(){
@@ -83,6 +85,7 @@
                     });
                 }, TIME_OUT);
             });
+
             function  geocodeLatLng(latlng, callback){
                 var geocoder  = new google.maps.Geocoder();
                 geocoder.geocode({'location': latlng},  function(results, status) {
@@ -94,6 +97,7 @@
                     }
                 });
             }
+
             function  geocodeAddress(address, callback)  {
                 var geocoder  = new google.maps.Geocoder();
                 geocoder.geocode({'address':  address}, function(results, status) {
@@ -101,10 +105,11 @@
                         var coordinates = results[0].geometry.location;
                         callback(null,  coordinates);
                     } else  {
-                        callback(new  Error("Can't find  the address"));
+                        callback(new  Error("Can  not find  the address"));
                     }
                 });
             }
+
             function  calculateRoute(A_latlng,   B_latlng,  callback) {
                 var directionService =  new google.maps.DirectionsService();
                 directionService.route({
@@ -121,13 +126,13 @@
                             duration: leg.duration,
                         });
                     } else  {
-                        callback(new  Error("Can't find  direction"));
+                        callback(new  Error("Can' not find  direction"));
                     }
                 });
             }
+
         }
     </script>
-
 </head>
 <body>
 
